@@ -1,5 +1,6 @@
 package com.string;
 
+import java.lang.reflect.Array;
 import java.util.Scanner;
 
 public class SortStringwithoutUsingInbuidMethod {

@@ -41,7 +41,8 @@ public class CountOccurance {
         String key = counts.entrySet().stream()
                 .filter(x -> x.getValue() > 1)
                 .findFirst()
-                .get().getKey();
+                .get()
+                .getKey();
 
 
         System.out.println("find the first Duplicate element in the String -  " );

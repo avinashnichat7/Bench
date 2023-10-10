@@ -23,7 +23,7 @@ public class SumOfDigitIsPalindrom {
         while (temp2 > 0) {
             rem = temp2 % 10;
             System.out.println("rem="+rem);
-            rev = rev * 10 + rem;;
+            rev = rev * 10 + rem;
             temp2 = temp2 / 10;
 
         }

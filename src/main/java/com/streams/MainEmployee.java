@@ -1,7 +1,9 @@
 package com.streams;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class MainEmployee {
@@ -24,6 +26,13 @@ public class MainEmployee {
 
         List<Employee> descendingOrder = employees.stream().sorted((s1, s2) -> s2.getSalary() - s1.getSalary()).collect(Collectors.toList());
 
+        Map<String, List<Employee>> collect1 = employees.stream().collect(Collectors.groupingBy(Employee::getName));
+
         System.out.println("Descending =" + descendingOrder);
 
+        List<Employee> collect = employees.stream()
+                .sorted(Comparator.comparing(Employee::getSalary).reversed())
+                .collect(Collectors.toList());
+
+        System.out.println("sort by salary: " + collect);
     }}

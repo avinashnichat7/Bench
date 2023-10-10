@@ -31,5 +31,8 @@ public class PrintDuplicates {
 
         System.out.println(integer);
 
+        String name= "I live in India";
+        System.out.println(name.replace("I", ""));
+
     }
 }

@@ -1,5 +1,10 @@
 package com.arrays;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 public class FindMissingElement {
 
     public static void main(String[] args) {
@@ -14,5 +19,23 @@ public class FindMissingElement {
             sum2 = sum2 + array[i];
         }
         System.out.println("missing array = " + (sum - sum2));
+
+        System.err.println("****************using Stream**********");
+        List<Integer> collect = Arrays.stream(array).boxed().collect(Collectors.toList());
+
+        System.out.println(findMissingElements(collect));
+
     }
+
+    public static int findMissingElements(List<Integer> list) {
+        int expected_length = list.size() + 1;
+        int sum = expected_length * (expected_length + 1) / 2;
+
+        int sum2 = 0;
+        sum2 = list.stream().mapToInt(Integer::intValue).sum();
+
+        return sum - sum2;
+
+    }
+
 }

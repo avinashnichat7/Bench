@@ -1,6 +1,8 @@
 package com.arrays;
 
-import java.util.HashMap;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class PrintDuplicatesElementArrays {
 
@@ -30,5 +32,13 @@ public class PrintDuplicatesElementArrays {
                 System.out.println(num + "");
             }
         }
+
+
+        int[] ints = Arrays.stream(array).distinct().toArray();
+
+        System.out.println(Arrays.toString(ints));
+
+
     }
+
 }

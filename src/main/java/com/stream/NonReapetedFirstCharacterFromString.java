@@ -8,7 +8,7 @@ public class NonReapetedFirstCharacterFromString {
 
     public static void main(String[] args) {
 
-        String input="avinash";
+        String input = "avinash";
 
 
         Optional<Character> first = input.chars()
@@ -19,14 +19,14 @@ public class NonReapetedFirstCharacterFromString {
                 .map(x -> x.getKey()).findFirst();
 
 
-//        System.out.println(first);
+        System.out.println("first non repeated character " + first);
 
 
         input.chars()
-                .mapToObj(x->Character.valueOf((char) x))
-                .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()))
-                .entrySet().stream().filter(x->x.getValue()==1)
-                .map(x->x.getKey())
+                .mapToObj(x -> Character.valueOf((char) x))
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream().filter(x -> x.getValue() == 1)
+                .map(x -> x.getKey())
                 .findFirst()
                 .ifPresent(System.out::println);
 
@@ -48,12 +48,13 @@ public class NonReapetedFirstCharacterFromString {
 
 //        System.out.println(findDuplicates);
 
-        String name="dehgfdsfdxv";
+        String name = "dehgfdsfdxv";
 
-        name.chars().mapToObj(x->Character.valueOf((char)x))
+
+        List<Character> collect1 = name.chars().mapToObj(x -> Character.valueOf((char) x))
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
-                .entrySet().stream().filter(x->x.getValue()==1)
-                .map(x->x.getKey()).collect(Collectors.toList());
+                .entrySet().stream().filter(x -> x.getValue() == 1)
+                .map(x -> x.getKey()).collect(Collectors.toList());
 
 
         String[] split = name.split("");
@@ -62,7 +63,7 @@ public class NonReapetedFirstCharacterFromString {
 
         Map.Entry<String, Long> nonRepeatedFirstCharacter = countOccance.entrySet().stream().filter(x -> x.getValue() == 1).findFirst().get();
 
-        System.out.println("nonRepeatedFirstCharacter ="+ nonRepeatedFirstCharacter);
+        System.out.println("nonRepeatedFirstCharacter =" + nonRepeatedFirstCharacter);
     }
 
 
