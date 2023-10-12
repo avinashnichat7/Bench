@@ -1,4 +1,4 @@
-package com.encryptionDecryption;
+package com.encryptionDecryption.RAS;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
@@ -6,8 +6,6 @@ import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import java.security.*;
 import java.util.Base64;
-
-import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class RSA {
     private PrivateKey privateKey;

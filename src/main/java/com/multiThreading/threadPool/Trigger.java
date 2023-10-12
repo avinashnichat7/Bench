@@ -23,8 +23,4 @@ public class Trigger {
         System.out.println("sucessfully done");
     }
 
-    private Connection getConnection() {
-        // Code for establishing a database connection
-        return null;
-    }
 }

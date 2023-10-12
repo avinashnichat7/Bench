@@ -22,12 +22,12 @@ public class FindMissingElement {
 
         System.err.println("****************using Stream**********");
 
-        int maxValue = Arrays.stream(array).max().getAsInt();
+        int expected_lenghts = Arrays.stream(array).max().getAsInt();
 
-        int expectedValue = maxValue * (maxValue + 1) / 2;
-        int actualSum = Arrays.stream(array).sum();
+        int sums = expected_lenghts * (expected_lenghts + 1) / 2;
+        int sums2 = Arrays.stream(array).sum();
 
-        int missing = expectedValue - actualSum;
+        int missing = sums - sums2;
         System.out.println("missing >>"+missing);
 
 
