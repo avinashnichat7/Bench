@@ -21,6 +21,16 @@ public class FindMissingElement {
         System.out.println("missing array = " + (sum - sum2));
 
         System.err.println("****************using Stream**********");
+
+        int maxValue = Arrays.stream(array).max().getAsInt();
+
+        int expectedValue = maxValue * (maxValue + 1) / 2;
+        int actualSum = Arrays.stream(array).sum();
+
+        int missing = expectedValue - actualSum;
+        System.out.println("missing >>"+missing);
+
+
         List<Integer> collect = Arrays.stream(array).boxed().collect(Collectors.toList());
 
         System.out.println(findMissingElements(collect));

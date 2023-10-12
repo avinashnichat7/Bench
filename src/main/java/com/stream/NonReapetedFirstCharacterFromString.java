@@ -11,15 +11,15 @@ public class NonReapetedFirstCharacterFromString {
         String input = "avinash";
 
 
-        Optional<Character> first = input.chars()
+        Character character = input.chars()
                 .mapToObj(x -> Character.valueOf((char) x))
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
                 .entrySet().stream()
                 .filter(x -> x.getValue() == 1)
-                .map(x -> x.getKey()).findFirst();
+                .map(x -> x.getKey()).findFirst().get();
 
 
-        System.out.println("first non repeated character " + first);
+        System.out.println("first non repeated character " + character);
 
 
         input.chars()

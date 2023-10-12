@@ -2,6 +2,8 @@ package com.arrays;
 
 import org.yaml.snakeyaml.emitter.ScalarAnalysis;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Random;
 
 public class SumOFArrays {
@@ -14,6 +16,9 @@ public class SumOFArrays {
         int calculateSum = calculateSum(array, 3, 7);
 
         System.out.println(calculateSum);
+
+        int sum = Arrays.stream(array).sum();
+        System.out.println(sum);
     }
 
     public static int calculateSum(int array[], int start, int end) {

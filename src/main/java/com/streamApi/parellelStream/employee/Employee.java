@@ -1,19 +1,23 @@
-package com.streams;
+package com.streamApi.parellelStream.employee;
 
 public class Employee {
-
     private int id;
     private String name;
-    private int salary;
+    private Double salary;
 
-    public Employee() {
-
-    }
-
-    public Employee(int id, String name, int salary) {
+    public Employee(int id, String name, Double salary) {
         this.id = id;
         this.name = name;
         this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", salary='" + salary + '\'' +
+                '}';
     }
 
     public int getId() {
@@ -32,20 +36,12 @@ public class Employee {
         this.name = name;
     }
 
-    public int getSalary() {
+    public Double getSalary() {
         return salary;
     }
 
-    public void setSalary(int salary) {
+    public void setSalary(Double salary) {
         this.salary = salary;
     }
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", salary=" + salary +
-                '}';
-    }
 }

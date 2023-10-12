@@ -10,13 +10,13 @@ public class Java8Application {
     public static void main(String[] args) {
         Employee employee = new Employee();
 
-//        List<com.stream.streamApi.Employee> employees = Arrays.asList(new Employee(1, "Avinash", 1000),
-//                new Employee(3, "Manish", 2000));
+//        List<com.stream.streamApi.Student> employees = Arrays.asList(new Student(1, "Avinash", 1000),
+//                new Student(3, "Manish", 2000));
 //
-//        List<Employee> list = employees.stream().sorted(Comparator.comparingInt(Employee::getSalary)).collect(Collectors.toList());
+//        List<Student> list = employees.stream().sorted(Comparator.comparingInt(Student::getSalary)).collect(Collectors.toList());
 //        System.out.println(list);
 //
-//        List<Employee> employeeList = employees.stream().sorted((s1, s2) -> s2.getSalary() - s1.getSalary()).collect(Collectors.toList());
+//        List<Student> employeeList = employees.stream().sorted((s1, s2) -> s2.getSalary() - s1.getSalary()).collect(Collectors.toList());
 //        System.out.println(employeeList);
 
         System.err.println("********************************************************************");

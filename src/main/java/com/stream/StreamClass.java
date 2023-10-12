@@ -8,12 +8,12 @@ import java.util.stream.IntStream;
 public class StreamClass {
     public static void main(String[] args) {
 
-        List<Integer> list = Arrays.asList(1, 23, 45, 500,500, 6, 78, 99, 9);
+        List<Integer> list = Arrays.asList(1, 23, 45, 500, 500, 6, 78, 99, 9);
 
         List<Integer> list1 = new ArrayList<>(list);
 
         List<Integer> collect = list1.stream().distinct().collect(Collectors.toList());
-        System.out.println("x"+ collect);
+        System.out.println("x" + collect);
 
         Optional<Integer> sumOfNumber = list.stream().reduce((a, b) -> a + b);
 
@@ -34,7 +34,7 @@ public class StreamClass {
         System.err.println("start with " + startWith);
 
 
-        Set<Integer> DuplicateElement = list.stream().filter(x -> Collections.frequency(list, x) >1).collect(Collectors.toSet());
+        Set<Integer> DuplicateElement = list.stream().filter(x -> Collections.frequency(list, x) > 1).collect(Collectors.toSet());
 
         System.err.println("duplicate element " + DuplicateElement);
 
@@ -46,7 +46,7 @@ public class StreamClass {
         System.err.println("Duplicates: " + printDuplicates);
 
 
-        String input ="dfghhfdsaa";
+        String input = "dfghhfdsaa";
 
 
         Character character = input.chars().mapToObj(x -> Character.valueOf((char) x))
@@ -58,11 +58,10 @@ public class StreamClass {
         System.out.println(character);
 
 
-
-      Character c=  input.chars().mapToObj(x-> Character.valueOf((char) x))
+        Character c = input.chars().mapToObj(x -> Character.valueOf((char) x))
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
-                .entrySet().stream().filter(x->x.getValue()==1)
-                .map(x->x.getKey()).findFirst().get();
+                .entrySet().stream().filter(x -> x.getValue() == 1)
+                .map(x -> x.getKey()).findFirst().get();
 
         System.out.println(c);
     }

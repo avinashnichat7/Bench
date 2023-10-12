@@ -30,7 +30,11 @@ public class CountOccurance {
         System.err.println("find the duplication element from the given String");
         System.out.println(findDuplicates);
 
-        List<String> uniqueElement = countOccurance.entrySet().stream().filter(x -> x.getValue() == 1).map(x -> x.getKey()).collect(Collectors.toList());
+        List<String> uniqueElement =
+                countOccurance.entrySet().stream()
+                        .filter(x -> x.getValue() == 1)
+                        .map(x -> x.getKey())
+                        .collect(Collectors.toList());
         System.out.println("fint the unqiue element from the given String - "+ uniqueElement);
 
         String[] s = name.split("");
