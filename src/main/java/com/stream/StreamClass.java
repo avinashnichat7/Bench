@@ -10,6 +10,11 @@ public class StreamClass {
 
         List<Integer> list = Arrays.asList(1, 23, 45, 500, 500, 6, 78, 99, 9);
 
+        List<String> collect1 = list.stream().map(x -> String.valueOf(x))
+                .filter(x -> x.equalsIgnoreCase("1"))
+                .collect(Collectors.toList());
+        System.out.println(collect1);
+
         List<Integer> list1 = new ArrayList<>(list);
 
         List<Integer> collect = list1.stream().distinct().collect(Collectors.toList());
@@ -58,7 +63,8 @@ public class StreamClass {
         System.out.println(character);
 
 
-        Character c = input.chars().mapToObj(x -> Character.valueOf((char) x))
+        Character c = input.chars()
+                .mapToObj(x -> Character.valueOf((char) x))
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
                 .entrySet().stream().filter(x -> x.getValue() == 1)
                 .map(x -> x.getKey()).findFirst().get();
